@@ -25,8 +25,6 @@ const useAuthStore = create(
                 // to prevent temporary lobbies during refresh/tab switching.
                 if (currentProfile && currentProfile.id === user.id && currentProfile.status === 'active') {
                     console.log("Active profile retained from state.");
-                    // Background fetch to ensure session is still valid/synced
-                    get()._syncProfile(user.id);
                     return currentProfile;
                 }
 
